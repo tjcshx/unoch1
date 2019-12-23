@@ -31,6 +31,7 @@ main (int argc, char **argv)
     char                   recvline[MAXLINE];
     struct sockaddr_in     serveraddr;
     int                    port = 22;
+    memset( recvline, 0, sizeof(recvline));
     if (argc != 2)
     {
         printf("usage: a.out <Ipaddress>\n");
@@ -67,6 +68,7 @@ main (int argc, char **argv)
     
     printf("Read data is :%s\n", recvline);
 
+    close(sockfd);
     return 0;
 } 
 
